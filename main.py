@@ -14,7 +14,7 @@ async def main():
         openai_api_key=SecretStr(os.environ["OPENAI_API_KEY"]),
         anthropic_api_key=SecretStr(os.environ["ANTHROPIC_API_KEY"]),
     )
-    client = LLMFactory.create_client(Provider.OPENAI, config)
+    client = LLMFactory.create_client(Provider.ANTHROPIC, config)
     print(await client.stream("¿Qué es la entropía?"))
 
 if __name__ == "__main__":
